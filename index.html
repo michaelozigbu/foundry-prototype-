@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundry Finance</title>
+    <meta
+      name="description"
+      content="Foundry Finance helps solo SaaS founders make safe financial decisions with runway, salary, and hiring simulations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <span class="brand-wordmark">
+            <span class="brand-foundry">Foundry</span>
+            <span class="brand-finance">Finance</span>
+          </span>
+        </div>
+        <a class="ghost-link" href="#waitlist">Join the waitlist</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">AI-powered cash clarity for solo SaaS founders</p>
+            <h1>Make the next financial decision before it makes itself.</h1>
+            <p class="hero-text">
+              Foundry Finance shows exactly how long your runway lasts, when you
+              can pay yourself, and whether a hire is actually affordable. No
+              spreadsheet gymnastics. AI turns your real numbers into clearer,
+              faster decisions you can actually trust.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#simulator">Try the simulator</a>
+              <a class="button button-secondary" href="#story">See how it works</a>
+            </div>
+            <ul class="hero-points">
+              <li>Built for founders under $20k MRR</li>
+              <li>AI-guided salary, hiring, and burn decisions</li>
+              <li>Model growth, churn, and expense shocks in seconds</li>
+            </ul>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-window">
+              <div class="panel-topline">
+                <span>Live snapshot</span>
+                <span>Updated with every assumption</span>
+              </div>
+              <div class="panel-grid">
+                <article>
+                  <p>Runway</p>
+                  <strong id="heroRunway">17.4 months</strong>
+                  <span class="positive">+2.1 months after pricing change</span>
+                </article>
+                <article>
+                  <p>Founder pay</p>
+                  <strong>$2,800/mo</strong>
+                  <span>Safe at current burn</span>
+                </article>
+                <article>
+                  <p>Next hire</p>
+                  <strong>September</strong>
+                  <span>Only if churn stays below 3.5%</span>
+                </article>
+                <article>
+                  <p>Cash risk</p>
+                  <strong>Low</strong>
+                  <span>2 scenarios need attention</span>
+                </article>
+              </div>
+              <div class="mini-chart" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="metrics-band" aria-label="Core outcomes">
+          <article>
+            <strong>Runway answers</strong>
+            <p>See how many months of cash you really have under different futures.</p>
+          </article>
+          <article>
+            <strong>AI-backed salary confidence</strong>
+            <p>Know when paying yourself is prudent instead of stressful.</p>
+          </article>
+          <article>
+            <strong>Smarter hiring timing</strong>
+            <p>Test a hire before payroll locks you into the wrong move.</p>
+          </article>
+        </section>
+
+        <section class="story-section" id="story">
+          <div class="section-heading">
+            <p class="eyebrow">What Foundry replaces</p>
+            <h2>Stop treating your business like a spreadsheet scavenger hunt.</h2>
+          </div>
+          <div class="story-grid">
+            <article class="story-card warning">
+              <h3>Guessing from bank balance</h3>
+              <p>
+                Bank balance tells you where you are today, not whether next
+                month is still safe after churn, tax, payroll, and slower growth.
+              </p>
+            </article>
+            <article class="story-card calm">
+              <h3>Decisions with context</h3>
+              <p>
+                Foundry uses AI to model the tradeoffs behind paying yourself,
+                raising spend, or making a hire so you can move with less fear.
+              </p>
+            </article>
+            <article class="story-card neutral">
+              <h3>AI without finance-speak</h3>
+              <p>
+                Built for founders who want signal, not corporate planning
+                theater. The AI stays useful, the numbers stay serious, and the
+                interface stays simple.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="simulator-section" id="simulator">
+          <div class="section-heading">
+            <p class="eyebrow">Decision simulator</p>
+            <h2>Pressure-test the next move before you commit.</h2>
+            <p class="section-text">
+              Adjust a few core assumptions and let Foundry surface how runway,
+              founder pay, and hiring timing change. It is decision support,
+              powered by AI and grounded in your actual business numbers.
+            </p>
+          </div>
+
+          <div class="simulator-shell">
+            <form class="control-panel" id="financeForm">
+              <label>
+                <span>Monthly recurring revenue</span>
+                <strong id="mrrValue">$9,500</strong>
+                <input type="range" min="1000" max="20000" step="250" value="9500" id="mrr" />
+              </label>
+              <label>
+                <span>Monthly expenses</span>
+                <strong id="expenseValue">$6,300</strong>
+                <input type="range" min="1500" max="18000" step="100" value="6300" id="expenses" />
+              </label>
+              <label>
+                <span>Cash in bank</span>
+                <strong id="cashValue">$48,000</strong>
+                <input type="range" min="5000" max="150000" step="1000" value="48000" id="cash" />
+              </label>
+              <label>
+                <span>Monthly churn</span>
+                <strong id="churnValue">3.2%</strong>
+                <input type="range" min="1" max="12" step="0.1" value="3.2" id="churn" />
+              </label>
+              <label>
+                <span>Expected monthly growth</span>
+                <strong id="growthValue">7.0%</strong>
+                <input type="range" min="0" max="20" step="0.5" value="7" id="growth" />
+              </label>
+            </form>
+
+            <div class="results-panel">
+              <div class="result-hero">
+                <p>Estimated runway</p>
+                <strong id="runwayMonths">16.8 months</strong>
+                <span id="runwayTone">Healthy cushion with room to experiment.</span>
+              </div>
+              <div class="result-grid">
+                <article>
+                  <p>Safe founder salary</p>
+                  <strong id="salaryResult">$2,100/mo</strong>
+                </article>
+                <article>
+                  <p>Earliest hire window</p>
+                  <strong id="hireResult">In 4 months</strong>
+                </article>
+                <article>
+                  <p>Monthly net cash</p>
+                  <strong id="netResult">+$2,896</strong>
+                </article>
+                <article>
+                  <p>Risk level</p>
+                  <strong id="riskResult">Measured</strong>
+                </article>
+              </div>
+              <div class="decision-note" id="decisionNote">
+                You can likely pay yourself modestly now, but a hire should wait
+                until growth proves durable for a few months.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="audience-section">
+          <div class="section-heading">
+            <p class="eyebrow">Who it is for</p>
+            <h2>Built for founders under $20k MRR who want clarity, not complexity.</h2>
+          </div>
+          <div class="audience-grid">
+            <article>
+              <h3>You are probably a fit if...</h3>
+              <ul>
+                <li>You run a small SaaS and every cash decision matters.</li>
+                <li>You want to pay yourself without sabotaging runway.</li>
+                <li>You are considering a contractor or first full-time hire.</li>
+              </ul>
+            </article>
+            <article>
+              <h3>You probably do not need this if...</h3>
+              <ul>
+                <li>You already have a finance team doing monthly scenario planning.</li>
+                <li>Your business can absorb bad decisions without noticing.</li>
+                <li>You enjoy rebuilding the same spreadsheet every month.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="cta-section" id="waitlist">
+          <div class="cta-copy">
+            <p class="eyebrow">Early access</p>
+            <h2>Stay in control of your cash before it turns into a scramble.</h2>
+            <p>
+              Foundry Finance is for founders who want fewer surprises,
+              cleaner decisions, and AI support that makes financial planning
+              feel less like guesswork. Join the waitlist to get first access.
+            </p>
+          </div>
+          <form class="cta-form" id="waitlistForm">
+            <label for="email" class="sr-only">Email address</label>
+            <input id="email" type="email" placeholder="you@company.com" required />
+            <button type="submit" class="button button-primary">Request access</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="accessModal" hidden>
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalMessage"
+      >
+        <button
+          type="button"
+          class="modal-close"
+          id="closeModal"
+          aria-label="Close request access popup"
+        >
+          X
+        </button>
+        <p class="eyebrow">Request received</p>
+        <h2 id="modalTitle">You are on the Foundry Finance early access list.</h2>
+        <p class="modal-lead" id="modalMessage">
+          We will reach out with first access details and product updates.
+        </p>
+        <div class="modal-summary">
+          <p>Notification email</p>
+          <strong id="modalEmail">you@company.com</strong>
+        </div>
+        <p class="modal-note">
+          The first release is focused on runway planning, founder pay, and hire timing for solo SaaS teams.
+        </p>
+        <button type="button" class="button button-primary" id="modalAction">
+          Back to site
+        </button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+
+  </body>
+</html>
