@@ -88,15 +88,15 @@ export default function DashboardPage() {
   };
 
   return (
-    <main className="min-h-screen px-5 py-7 text-stone-950 sm:px-8 lg:px-12">
+    <main className="min-h-screen overflow-x-hidden px-5 py-7 text-stone-950 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
-        <header className="animate-rise flex flex-col justify-between gap-6 border-b border-stone-200/80 pb-8 lg:flex-row lg:items-end">
+        <header className="flex flex-col justify-between gap-6 border-b border-stone-200/80 pb-8 lg:flex-row lg:items-end">
           <div className="max-w-3xl">
             <div className="brand-pill inline-flex items-center gap-3 rounded-full px-3 py-2 shadow-sm">
               <span className="h-2.5 w-2.5 rounded-full bg-[#9a4f2f]" />
               <p className="text-xs font-black uppercase tracking-[0.18em]">Foundry Finance</p>
             </div>
-            <h1 className="foundry-title mt-5 text-4xl font-black leading-[1.02] tracking-tight sm:text-5xl">
+            <h1 className="foundry-title mt-5 text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl sm:leading-[1.02]">
               Financial decisions for solo SaaS founders.
             </h1>
             <p className="foundry-muted mt-4 max-w-2xl text-base leading-7">
@@ -113,7 +113,7 @@ export default function DashboardPage() {
         </header>
 
         <div className="grid gap-8 py-8 lg:grid-cols-[420px_1fr]">
-          <aside className="animate-rise animate-delay-1 space-y-4 lg:sticky lg:top-6 lg:self-start">
+          <aside className="space-y-4 lg:sticky lg:top-6 lg:self-start">
             <div className="dark-panel rounded-lg border border-stone-900 p-5 shadow-[0_22px_65px_rgba(56,42,32,0.18)]">
               <p className="text-sm font-bold uppercase tracking-[0.14em]">Planning inputs</p>
               <p className="dark-panel-muted mt-3 text-sm leading-6">
@@ -127,7 +127,7 @@ export default function DashboardPage() {
             <InputCard label="Churn Rate" helper="Expected monthly customer churn." value={churnRate} onChange={setChurnRate} suffix="%" step={0.1} />
           </aside>
 
-          <section className="animate-rise animate-delay-2 space-y-6">
+          <section className="min-w-0 space-y-6">
             <ResultCard
               title="Financial Dashboard"
               footer="Runway uses cash divided by monthly burn. If revenue covers expenses, runway is shown as profitable."
@@ -146,7 +146,7 @@ export default function DashboardPage() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-stone-500">Risk Level</p>
-                  <span className={`risk-pulse mt-3 inline-flex rounded-full border px-3 py-1 text-sm font-black ${riskClasses[metrics.risk]}`}>
+                  <span className={`mt-3 inline-flex rounded-full border px-3 py-1 text-sm font-black ${riskClasses[metrics.risk]}`}>
                     {metrics.risk}
                   </span>
                   <p className="mt-3 text-sm leading-6 text-stone-500">
@@ -171,7 +171,7 @@ export default function DashboardPage() {
               </div>
             </ResultCard>
 
-            <div className="animate-rise animate-delay-3 grid gap-6 xl:grid-cols-3">
+            <div className="grid gap-6 xl:grid-cols-3">
               <SimulatorSection
                 title="Salary Planner"
                 description="Add founder pay to monthly expenses."

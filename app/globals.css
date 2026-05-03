@@ -25,6 +25,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   min-height: 100%;
   margin: 0;
   background: var(--canvas);
@@ -42,58 +43,18 @@ input {
   color: var(--ink);
 }
 
-@keyframes rise-in {
-  from {
-    transform: translateY(14px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse-soft {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.025);
-  }
-}
-
-.animate-rise {
-  animation: rise-in 520ms ease both;
-  opacity: 1;
-}
-
-.animate-delay-1 {
-  animation-delay: 90ms;
-}
-
-.animate-delay-2 {
-  animation-delay: 160ms;
-}
-
-.animate-delay-3 {
-  animation-delay: 230ms;
-}
-
 .card-shell {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 18px 55px rgba(56, 42, 32, 0.08);
   transition:
     border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
+    box-shadow 180ms ease;
 }
 
 .card-shell:hover {
   border-color: #d8cfc4;
   box-shadow: 0 22px 70px rgba(56, 42, 32, 0.11);
-  transform: translateY(-2px);
 }
 
 .brand-pill {
@@ -121,8 +82,4 @@ input {
 
 .metric-value {
   font-variant-numeric: tabular-nums;
-}
-
-.risk-pulse {
-  animation: pulse-soft 2.8s ease-in-out infinite;
 }
