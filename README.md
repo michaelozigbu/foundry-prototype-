@@ -1,13 +1,11 @@
 # Foundry Finance
 
-This folder is split into two project areas:
+Next.js App Router dashboard prototype for solo SaaS founder finance planning.
 
-- `website/` - the original static marketing website prototype.
-- `prototype/` - the Next.js App Router dashboard prototype at `/dashboard`.
-
-To run the dashboard prototype:
+To run locally:
 
 ```bash
-cd prototype
 npm run dev
 ```
+
+Open `http://127.0.0.1:3000/dashboard`.
